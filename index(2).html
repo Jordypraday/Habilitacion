@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .verde{ border-radius: 2px;
+            background: rgb(2, 255, 2);
+            color: black;
+
+        }
+    </style>
+
+</head>
+<body>
+   
+    
+    <label for="">Ingrese la palabra</label>
+    <br>
+    <br>
+    <input type="text" name="" id="caja">
+    <!-- <br>
+    <br> -->
+    <button onclick="enviar()">Enviar</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        
+
+        
+        function enviar(){
+            var caja  = $("#caja").val();
+            var min   = caja.toLowerCase();
+            var a     = min.split(""); 
+            var texto = a.reverse();
+            // console.log(texto)
+            if(caja.length<2){
+                Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ingresa algo de texto',
+                footer: '<a href="">Why do I have this issue?</a>'
+                })
+            }else{
+                if(a==texto){
+                    Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Tu palabra es igual',
+                    showConfirmButton: false,
+                    timer: 1500
+                    })
+                    var btn = $("caja").addClass("verde");
+                    }
+                }
+            }
+
+    </script>
+</body>
+</html>
